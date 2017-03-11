@@ -1,10 +1,13 @@
-var express = require('express');
-var bodyParser = require('body-parser');
+let  express = require('express');
+let  bodyParser = require('body-parser');
+let path = require('path')
 
-var index = require('./routes/index');
-var users = require('./routes/users');
+let  index = require('./routes/index');
+let  users = require('./routes/users');
+let  events = require('./routes/events')
 
-var app = express();
+
+let  app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -15,6 +18,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use('/', index);
 app.use('/users', users);
+app.use('/events', events)
 
 app.listen(3000)
 
