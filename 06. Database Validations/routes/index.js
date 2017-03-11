@@ -6,4 +6,8 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
+router.get('/create', (req, res) => {
+  res.render('create-event', {msg: '', data: {}})
+})
+
 module.exports = router;

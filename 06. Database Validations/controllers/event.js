@@ -1,3 +1,4 @@
+let errorHelper = require('mongoose-error-helper').errorHelper
 let Events = require('../models/event')
 
 create = (req, res, next) => {
@@ -5,7 +6,13 @@ create = (req, res, next) => {
   doc.save().then( (data) => {
     res.send(data)
   }).catch( (err) => {
-    res.send(err)
+    let errArr = []
+    Object.keys(err.errors).forEach( (field) => {
+      let eObj = err.errors[field]
+      errArr.push(eObj.message)
+    })
+    console.log(req.body);
+    res.render('create-event', {msg: errArr, data: req.body})
   })
 },
 
