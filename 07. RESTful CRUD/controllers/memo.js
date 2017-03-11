@@ -18,13 +18,10 @@ read = (req, res, next) => {
 }
 
 update = (req, res, next) => {
-  Memo.findById(req.params.id).then( (memo) => {
-    data.update(req.body, (error, data) => {
-      if (error)
-        res.send(error)
-      else
-        res.send(data)
-    })
+  console.log(req.body);
+  Memo.findOneAndUpdate({_id: req.params.id}, req.body, {}, (err, doc) => {
+    if(err) res.send(err)
+    else res.send(doc)
   })
 }
 

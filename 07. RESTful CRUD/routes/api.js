@@ -6,6 +6,6 @@ let Memo = require('../controllers/memo')
 router.post('/memos', Memo.create);
 router.get('/memos', Memo.read);
 router.put('/memos/:id', Memo.update);
-router.post('/memos/:id', Memo.deleteMemo);
+router.delete('/memos/:id', Memo.deleteMemo);
 
 module.exports = router
