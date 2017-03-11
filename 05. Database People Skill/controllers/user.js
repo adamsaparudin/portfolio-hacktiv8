@@ -24,7 +24,6 @@ addSkill = (req, res, next) => {
   User.findById(req.params.id, (err, doc) => {
     if (err) res.send(err)
     let skill = doc.skill
-    console.log(doc);
     let skillObj = {
       skillId: req.body.skillId,
       score: req.body.score
