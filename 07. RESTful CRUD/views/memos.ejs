@@ -21,22 +21,12 @@
             <th>Due Date</th>
           </tr>
         </thead>
-        <tbody>
-          <%
-            let month = data[0].dueDate.getUTCMonth() + 1
-            let day = data[0].dueDate.getUTCDate()
-            let year = data[0].dueDate.getUTCFullYear()
-          %>
-          <tr>
-            <td>1</td>
-            <td><%= data[0].title %></td>
-            <td><%= data[0].done %></td>
-            <td><%= year + "-" + month + "-" + day  %></td>
-          </tr>
+        <tbody id="isimemo">
+
         </tbody>
       </table>
     </div>
-  <script src="/javascripts/script.js"></script>
+    <script src="/javascripts/script.js"></script>
   </body>
 
 </html>

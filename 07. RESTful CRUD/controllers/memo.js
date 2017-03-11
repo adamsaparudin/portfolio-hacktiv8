@@ -11,7 +11,7 @@ create = (req, res, next) => {
 
 read = (req, res, next) => {
   Memo.find({}).then( (memos) => {
-    res.render('memos', {data: memos})
+    res.send(memos)
   }).catch( (err) => {
     res.send(err)
   })
