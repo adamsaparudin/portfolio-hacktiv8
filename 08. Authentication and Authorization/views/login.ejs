@@ -6,9 +6,12 @@
   </head>
   <body>
     <div class="wrapper">
-      <h1>Register Page</h1>
+      <h1>Login Page</h1>
+      <% if (msg !== '') { %>
+      <p><%= msg %></p>
+      <% } %>
       <div class="form-login">
-        <form class="" action="/register" method="post">
+        <form class="" action="/login" method="post">
           <label for="email">Email :  <input type="text" name="email"></label><br>
           <label for="password">Password :   <input type="password" name="password"></label><br>
           <input type="submit" value="Login">

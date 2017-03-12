@@ -20,6 +20,10 @@
   <body>
     <div class="wrapper">
       <h1>Register Page</h1>
+      <a href="/login">Login</a>
+      <% if (msg !== '') { %>
+      <p><%= msg %></p>
+      <% } %>
       <div class="form-register">
         <form class="" action="/register" method="post">
           <label for="email">Email :  <input type="text" name="email"></label><br>
