@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script src="http://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <title>Test Title</title>
+  </head>
+  <body>
+
+    <h3>Form change button title</h3>
+    <label for="title-custom">Title : </label>
+    <input type="text" id="title-custom" name="title-custom" placeholder="Title..">
+    <button id="button-title-custom">Go Go Go</button>
+
+    <h3>Custom query and change title</h3>
+    <label for="query-title">Query : </label>
+    <button id="button-query">Go Go Go</button>
+
+    <h3>Meals</h3>
+    <p>Meals : <span id="meals"></span></p><br>
+    <button id="button-meals" type="button" name="button">Go Go Go</button>
+
+  </body>
+  <script>
+
+
+    $("#button-title-custom").click(function() {
+      document.title = $("#title-custom").val()
+    })
+
+    $.urlParam = function(name){
+    	var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
+    	return results[1] || 0;
+    }
+
+    $("#button-query").click(function() {
+      document.title = $.urlParam('title')
+    })
+
+    let meals = ["Berger", "Kebab", "Pecel", "Sate", "Mie", "Nasi", "Kecap"]
+    $("#button-meals").click( () => {
+      $("#meals").empty()
+      let ind = Math.floor(Math.random() * 7)
+      $("#meals").append(meals[ind])
+    })
+
+  </script>
+</html>
